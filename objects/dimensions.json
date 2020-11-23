@@ -1,0 +1,727 @@
+[
+  {
+    "qInfo": {
+      "qId": "22218782-6a87-4d04-bc00-9f762ca0fb9b",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.Date_to"
+      ],
+      "qFieldLabels": [
+        "Invoice Date To"
+      ],
+      "qLabelExpression": "only({<Index={30}>}$(=vDefault_Lang))",
+      "title": "Invoice Date To",
+      "coloring": {
+        "colorMapRef": "syhCjW",
+        "changeHash": "0.20781139219411426"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Date To",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "2cc6bda5-3170-4ad4-ba2a-0ed1bb35db19",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.Currency.Code"
+      ],
+      "qFieldLabels": [
+        "Invoice Currency Code"
+      ],
+      "qLabelExpression": "only({<Index={28}>}$(=vDefault_Lang))",
+      "title": "Invoice Currency Code",
+      "coloring": {
+        "colorMapRef": "syhCjW",
+        "changeHash": "0.4627326128634135"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Currency Code",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "910e426a-e1ea-49ee-93ad-84e35d1d12bd",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.nr"
+      ],
+      "qFieldLabels": [
+        "Contact Nr."
+      ],
+      "qLabelExpression": "only({<Index={32}>}$(=vDefault_Lang))",
+      "title": "Contact Nr.",
+      "coloring": {
+        "changeHash": "0.6777817995148219",
+        "colorMapRef": "910e426a-e1ea-49ee-93ad-84e35d1d12bd"
+      }
+    },
+    "qMetaDef": {
+      "title": "Contact Nr.",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "BJZYKnk",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.city"
+      ],
+      "qFieldLabels": [
+        "Customer City"
+      ],
+      "qLabelExpression": "only({<Index={19}>}$(=vDefault_Lang))",
+      "title": "Customer City",
+      "coloring": {
+        "changeHash": "0.007710291257507107",
+        "colorMapRef": "BJZYKnk"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer City",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "CSsRsyU",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Year"
+      ],
+      "qFieldLabels": [
+        "Year"
+      ],
+      "qLabelExpression": "only({<Index={12}>}$(=vDefault_Lang))",
+      "title": "Year",
+      "coloring": {
+        "changeHash": "0.4628309643833233",
+        "colorMapRef": "CSsRsyU"
+      }
+    },
+    "qMetaDef": {
+      "title": "Year",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "EDLCXaR",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.Group"
+      ],
+      "qFieldLabels": [
+        "Customer Group"
+      ],
+      "qLabelExpression": "only({<Index={18}>}$(=vDefault_Lang))",
+      "title": "Customer Group",
+      "coloring": {
+        "changeHash": "0.4628671432129199",
+        "colorMapRef": "EDLCXaR"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Group",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "EcKdpW",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "=[Invoice.status]"
+      ],
+      "qFieldLabels": [
+        "Invoice Status"
+      ],
+      "qLabelExpression": "only({<Index={11}>}$(=vDefault_Lang))",
+      "title": "Invoice Status",
+      "coloring": {
+        "changeHash": "0.6693387615052355",
+        "colorMapRef": "EcKdpW"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Status",
+      "description": "",
+      "tags": [
+        "Invoice"
+      ]
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "FMSAwpM",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Month"
+      ],
+      "qFieldLabels": [
+        "Month"
+      ],
+      "qLabelExpression": "only({<Index={15}>}$(=vDefault_Lang))",
+      "title": "Month",
+      "coloring": {
+        "changeHash": "0.34991632206470147",
+        "colorMapRef": "FMSAwpM"
+      }
+    },
+    "qMetaDef": {
+      "title": "Month",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "GRwsZb",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.name_2"
+      ],
+      "qFieldLabels": [
+        "Customer Name 2"
+      ],
+      "qLabelExpression": "only({<Index={17}>}$(=vDefault_Lang))",
+      "title": "Customer Name 2",
+      "coloring": {
+        "changeHash": "0.11821465941034703",
+        "colorMapRef": "GRwsZb"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Name 2",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "HZmZjDw",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "=[$(=Only([%_Dash_Date_Field_Label]))]"
+      ],
+      "qFieldLabels": [
+        "DynamicDateDimension"
+      ],
+      "title": "DynamicDateDimension",
+      "coloring": {
+        "changeHash": "0.6468287045186387",
+        "colorMapRef": "HZmZjDw"
+      }
+    },
+    "qMetaDef": {
+      "title": "DynamicDateDimension",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "NDpXP",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Date"
+      ],
+      "qFieldLabels": [
+        "Date"
+      ],
+      "qLabelExpression": "only({<Index={16}>}$(=vDefault_Lang))",
+      "title": "Date",
+      "coloring": {
+        "changeHash": "0.9279760504834613",
+        "colorMapRef": "NDpXP"
+      }
+    },
+    "qMetaDef": {
+      "title": "Date",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "PSqZkF",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "MonthYear"
+      ],
+      "qFieldLabels": [
+        "MonthYear"
+      ],
+      "qLabelExpression": "only({<Index={14}>}$(=vDefault_Lang))",
+      "title": "MonthYear",
+      "coloring": {
+        "changeHash": "0.6265055433341435",
+        "colorMapRef": "PSqZkF"
+      }
+    },
+    "qMetaDef": {
+      "title": "MonthYear",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "TEgs",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.Type"
+      ],
+      "qFieldLabels": [
+        "Customer Type"
+      ],
+      "qLabelExpression": "only({<Index={6}>}$(=vDefault_Lang))",
+      "title": "Customer Type",
+      "coloring": {
+        "changeHash": "0.8841839737421047",
+        "colorMapRef": "TEgs"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Type",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "Zzysfm",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Article.intern_name"
+      ],
+      "qFieldLabels": [
+        "Product Name"
+      ],
+      "qLabelExpression": "only({<Index={1}>}$(=vDefault_Lang))",
+      "title": "Product Name",
+      "coloring": {
+        "changeHash": "0.19344932303168094",
+        "colorMapRef": "Zzysfm"
+      }
+    },
+    "qMetaDef": {
+      "title": "Product Name",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "ad1670bd-a8d6-44f9-9007-155a41e74746",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.title"
+      ],
+      "qFieldLabels": [
+        "Invoice Title"
+      ],
+      "qLabelExpression": "only({<Index={31}>}$(=vDefault_Lang))",
+      "title": "Invoice Title",
+      "coloring": {
+        "colorMapRef": "syhCjW",
+        "changeHash": "0.3132209073526451"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Title",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "dfe0c80a-8e75-4de4-8e79-8726beb02ba6",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.Date_from"
+      ],
+      "qFieldLabels": [
+        "Invoice Date From"
+      ],
+      "qLabelExpression": "only({<Index={29}>}$(=vDefault_Lang))",
+      "title": "Invoice Date From",
+      "coloring": {
+        "colorMapRef": "syhCjW",
+        "changeHash": "0.054144269014388735"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Date From",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "jHjDJEZ",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.name_1"
+      ],
+      "qFieldLabels": [
+        "Customer Name"
+      ],
+      "qLabelExpression": "only({<Index={2}>}$(=vDefault_Lang))",
+      "title": "Customer Name",
+      "coloring": {
+        "changeHash": "0.9801453293751474",
+        "colorMapRef": "jHjDJEZ"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Name",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "jfdE",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "=$(vDIM_Customer_Postcode_City)"
+      ],
+      "qFieldLabels": [
+        "Postcode City"
+      ],
+      "qLabelExpression": "only({<Index={25}>}$(=vDefault_Lang))",
+      "title": "Postcode City",
+      "coloring": {
+        "changeHash": "0.811755613138992",
+        "colorMapRef": "jfdE"
+      }
+    },
+    "qMetaDef": {
+      "title": "Postcode City",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "jycA",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Day"
+      ],
+      "qFieldLabels": [
+        "Day"
+      ],
+      "qLabelExpression": "only({<Index={22}>}$(=vDefault_Lang))",
+      "title": "Day",
+      "coloring": {
+        "changeHash": "0.12672795861948338",
+        "colorMapRef": "jycA"
+      }
+    },
+    "qMetaDef": {
+      "title": "Day",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "kPdk",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Items.unit_name"
+      ],
+      "qFieldLabels": [
+        "Product Unit"
+      ],
+      "qLabelExpression": "only({<Index={26}>}$(=vDefault_Lang))",
+      "title": "Product Unit",
+      "coloring": {
+        "changeHash": "0.4040190265700616",
+        "colorMapRef": "kPdk"
+      }
+    },
+    "qMetaDef": {
+      "title": "Product Unit",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mPbek",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "YearQuarter"
+      ],
+      "qFieldLabels": [
+        "YearQuarter"
+      ],
+      "qLabelExpression": "only({<Index={13}>}$(=vDefault_Lang))",
+      "title": "YearQuarter",
+      "coloring": {
+        "changeHash": "0.31144362368361955",
+        "colorMapRef": "mPbek"
+      }
+    },
+    "qMetaDef": {
+      "title": "YearQuarter",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mUpJRS",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.Owner Name"
+      ],
+      "qFieldLabels": [
+        "Customer Owner"
+      ],
+      "qLabelExpression": "only({<Index={10}>}$(=vDefault_Lang))",
+      "title": "Customer Owner",
+      "coloring": {
+        "changeHash": "0.0016351321041214728"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Owner",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "pJsqPz",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.Country"
+      ],
+      "qFieldLabels": [
+        "Contact Country"
+      ],
+      "qLabelExpression": "only({<Index={21}>}$(=vDefault_Lang))",
+      "title": "Contact Country",
+      "coloring": {
+        "changeHash": "0.9093305280639639",
+        "colorMapRef": "pJsqPz"
+      }
+    },
+    "qMetaDef": {
+      "title": "Contact Country",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "rdgmSz",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.Status_Group"
+      ],
+      "qFieldLabels": [
+        "Invoice Status Group"
+      ],
+      "title": "Invoice Status Group",
+      "coloring": {
+        "changeHash": "0.4105399234912863",
+        "colorMapRef": "rdgmSz"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Status Group",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "sEnFg",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.document_nr"
+      ],
+      "qFieldLabels": [
+        "Document No."
+      ],
+      "qLabelExpression": "only({<Index={24}>}$(=vDefault_Lang))",
+      "title": "Document No.",
+      "coloring": {
+        "changeHash": "0.6334230154766092",
+        "colorMapRef": "sEnFg"
+      }
+    },
+    "qMetaDef": {
+      "title": "Document No.",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "syhCjW",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.contact_address"
+      ],
+      "qFieldLabels": [
+        "Invoice Contact Address"
+      ],
+      "qLabelExpression": "only({<Index={27}>}$(=vDefault_Lang))",
+      "title": "Invoice Contact Address",
+      "coloring": {
+        "changeHash": "0.061081161116613325"
+      }
+    },
+    "qMetaDef": {
+      "title": "Invoice Contact Address",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "wzmUru",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Contact.birthday"
+      ],
+      "qFieldLabels": [
+        "Customer Birthday"
+      ],
+      "qLabelExpression": "only({<Index={20}>}$(=vDefault_Lang))",
+      "title": "Customer Birthday",
+      "coloring": {
+        "changeHash": "0.7968637687495754",
+        "colorMapRef": "wzmUru"
+      }
+    },
+    "qMetaDef": {
+      "title": "Customer Birthday",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "zFcAXP",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "Invoice.DaysOverDue"
+      ],
+      "qFieldLabels": [
+        "Days Invoice is Overdue"
+      ],
+      "qLabelExpression": "'Days Invoice is Overdue'",
+      "title": "Days Invoice is Overdue",
+      "coloring": {
+        "changeHash": "0.1877332853899556"
+      }
+    },
+    "qMetaDef": {
+      "title": "Days Invoice is Overdue",
+      "description": "",
+      "tags": []
+    }
+  }
+]

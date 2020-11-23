@@ -1,0 +1,5829 @@
+[
+  {
+    "qInfo": {
+      "qId": "017b66e3-da93-4d5a-8c0d-836accccf0ba",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_MaxYear_MaxMonth))/($(vKPI_InvoiceCountMTD_MaxYear_MaxMonth))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "02dcbad9-b5da-4443-9369-00a8833a8682",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD: '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "02ecc4de-fef0-4995-9aa4-26ee6cdf0e1d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_PrevYear_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_MaxYear_MaxMonth))-($(vKPI_InvoiceCountMTD_PrevYear_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "03b52f6a-6d33-495f-b211-97419a2545f7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales Between '&($(vSel_Max_Year)-$(=max([%_Dash_Periods])))& ' and '& $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "04002b89-68d6-4db4-8b23-0b328ce2f9dd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales_Comparison_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1000}>}$(=vDefault_Lang))&' '&only([%_Dash_Date_Flag_Label])&' %:  '&maxstring({<[$(=only(%_Dash_Date_Flag))]={1},               [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}              >}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "058b5909-3718-48ba-b764-507bcb7fe907",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "070b232e-cdf9-466d-969b-03b81a021a1f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_Prev2Year))/($(vKPI_InvoiceCountMTD_Prev2Year))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "07f5534f-1d03-4897-a2f5-7610f4d7f948",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD: $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "084fdb4e-a04d-456b-b519-c6cd81e03672",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Comparison_Title",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-year',Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-12)}>} MonthYear),'MMMM-YYYY'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-month',Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-1)}>} MonthYear),'MMMM-YYYY'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-running-12-months','avg '& Date(Max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-12)}>} MonthYear),'MMMM-YYYY')&'-'&Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-1)}>} MonthYear),'MMMM-YYYY'))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0927ce51-29c9-4bc0-a0f0-e8875cc6c3b5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD: $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "092a57c7-281b-47b4-80bf-7793139b80e2",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD: $(vSel_Max_MonthYear)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0a3a4992-396d-4ec9-9842-aeeefc4c359c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0a7237ac-b82e-49cf-a9c7-7c766a1ae354",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_PrevYear_MaxMonth))/($(vKPI_SalesMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0c1a8d12-b39d-429e-b49d-a314da087c75",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_customer_id",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "263b6b37-8186-41cd-a9ea-7c8339b66e4b",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0de84811-2724-4130-a4b6-73385cadadb7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Birthday",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.Birthday]",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0f6caf03-3e33-42a0-940b-d3330b14c13f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_MonthNum",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}MonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0f7329dc-e4d4-4bdc-86b2-4d6150b7359b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "0f9f55f9-a7ca-458b-ac3c-f56fb7229121",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "115c8dd8-4f15-40b5-a718-5c0c79132acb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_MaxYear))-($(vKPI_AvgSalesYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "11ad4004-1258-445b-bb61-740b92ed76b9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Country_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer Country",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "131891c5-967e-48f2-b6db-deb185dcf2c0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_PrevYear_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_MaxYear_MaxMonth))-($(vKPI_AvgSalesMTD_PrevYear_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "13230033-2318-47df-9d89-4ec3f8f5d387",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceDate_DaysSinceLast_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Days Since Last Invoice Date",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "135f03b6-bad6-47bc-8fab-52ee88b9ef2f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD: $(=($(vSel_Max_Year)-2))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "13713dce-787a-4333-950b-1e2455d5d339",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_MaxYear_MaxMonth))/($(vKPI_ContactCountMTD_PrevYear_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "147d9ca7-1080-4863-9e23-3ebc4e983620",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items): '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "153e3014-013d-4b25-b178-22021e02adbf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceGross",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_gross])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1589ba6f-7b6d-4af8-9d60-64a2c3805bbf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "15dd2cfb-eb4a-456b-995a-4029f212b175",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Group2_Total_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='$(=only([$(='%_Compartive_Analysis_Measure_'&vDefault_Lang)]))'&' Group2'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "16db875d-eb5e-4ff8-a40e-38f9920cabef",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1715998c-9abb-4d9f-a103-9a12e8a13588",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "17e16755-8ea0-4c6a-8ee3-5cd6d0d29c83",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vLang",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "EN",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "19ea22f0-5038-42e6-a070-de89dcce85c8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={\">=$(=$(vSel_Max_Year)-$(=max([%_Dash_Periods])))<=$(vSel_Max_Year)\"},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1af647bb-c39f-4250-9c3c-03276f9ef67f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1b5b34c0-35d9-4426-a91b-a08a66527110",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_PrevYear))/($(vKPI_InvoiceCountYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1b86ba62-766a-4112-a9db-796d55cf145d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1be340c1-6d2e-495b-b495-a36f6e3e2596",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers MTD: '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1c0a4645-a133-4b52-8d3b-ab24c99807d6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_Dyn))/($(vKPI_InvoiceCountMTD_Dyn))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1c0bcc1d-6616-4151-a379-01ea9b86bf22",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "$(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group1'))-$(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group2'))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1c9d2bed-8644-4673-a2ca-c5fd8f191840",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD Difference Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1cac843a-ead8-48e4-bcc0-ae1ccdcad98a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Type",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.Type]",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1cafaf30-aa0b-47db-92a0-897458230e01",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_MaxYear_MaxMonth))/($(vKPI_SalesMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1dbeff1a-bca5-4ad9-beb6-f96bd794dfe3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1e06b668-6a94-4c9e-8568-5c81026c48db",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "1fda1796-0091-41d6-be11-d12674cb5fb5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2060b33a-e8b1-43f1-9730-c2e0ce0b4cd4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_MaxYear))/($(vKPI_SalesItemsYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2108aca0-216e-4943-9b19-55466f684921",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_PrevYear))-($(vKPI_ContactCountYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "22a230bb-8b32-4733-933d-871c3f889064",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Name",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.name_1]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "22aa11cd-acb2-42db-bd24-c8a42c09ffac",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD))/($(vKPI_InvoiceCountMTD))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "22adf556-5a10-496a-894f-c2d950934191",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Sales_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1000}>}$(=vDefault_Lang))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "22ff3970-2d87-472e-9c0c-9ef45586adda",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD % Change Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "232175d8-408d-4037-a535-c3f9b07983b7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Prev2Year_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "233137b3-561a-4682-bee9-560a65017b2e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD: '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "25fade5f-9edd-4baf-add4-4868c0f4ccb6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_MaxYear_MaxMonth))/($(vKPI_SalesItemsMTD_PrevYear_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "268060fc-2984-4a21-af11-734c77b61e9f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount_OverPeriod",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag))]={1}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "274e6f0c-bac3-4a18-8706-f1c544c52c8a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "284ee57c-20b1-4be6-b996-1227748e2d37",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vGlobal_RevenueType_Field",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=if([%_Global_Revenue_Type_Value]='Revenue','Invoice.total',if([%_Global_Revenue_Type_Value]='Revenue Net','Invoice.total_net',if([%_Global_Revenue_Type_Value]='Revenue Gross','Invoice.total_gross')))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "28b61904-08c5-4429-97a0-232ebf1ed6a6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "28caa717-cb08-4f10-a323-8ae48c72d7a6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD: $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2940239b-5200-4b92-bf62-c042b0f0c6fc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2995cc68-d59f-4ded-b780-1204b9a970f1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales_OverPeriod_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1000}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2a4473d9-1362-41f5-b79d-efda6b9544e6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_base_path",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "03.dbi-bexio-sales",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2c11dba6-994d-4f58-90bd-d2bf81d55e7e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2e0941f6-1cc6-48fc-9ba1-f93ffc0bb731",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_MaxYear_MaxMonth))-($(vKPI_SalesMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2e5c9bdc-ff3d-4bc9-96ee-1457ab28fe6c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales_OverPeriod",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag))]={1}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2ecd946a-ce10-4e09-81a1-7282837c694f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD Difference Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2f6e786d-cdcf-4618-8e8e-204a723519da",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices YTD Between '&($(vSel_Max_Year)-$(=max([%_Dash_Periods])))& ' and '& $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "2ff04477-7d97-4aed-8ae7-2ddd1d5b33b4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_PrevYear))/($(vKPI_InvoiceCountMTD_PrevYear))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "30b116a9-dec6-4b96-a5ca-65ef4d1ea5b4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "30c5e4bc-df36-4d3a-b332-50904248f41e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "31802bbe-7a83-451a-8d4b-cd08d9e0b410",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_MaxYear))-($(vKPI_SalesItemsYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "325c6ce8-d018-405a-88a8-ccf50273eb95",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Invoice_Count",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([%Flag_IsInvoice])",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "3284da7b-4597-4834-a5bf-72e3fe803b98",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Range",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "'1-'&only({1<[_Flag_LastFullDay]={1}>}Date)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "33adaff2-4c0f-4a89-80b3-31b04194fa3e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_PrevYear))-($(vKPI_SalesItemsYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "33aed431-3cf4-4931-9f62-5f49fb657314",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) Difference Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "33cea57a-5a22-46ae-819c-fd5c3e55a280",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_MaxYear_MaxMonth))-($(vKPI_InvoiceCountMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "33d44149-4946-4849-a577-64c71dd6be80",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales_Comparison",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[Invoice.total_net]+[Invoice.total_taxes]))/(sum({<[$(=only(%_Dash_Date_Flag))]={1},      [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}[Invoice.total_net]+[Invoice.total_taxes]))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "34f619f6-4f76-499d-bb82-571170525f93",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Group2_Total",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "$(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group2'))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "368e57fe-9eae-4f02-83b2-15eaffb5db07",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vGlobal_RevenueType",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "only([%_Global_Revenue_Type_Value])",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "36d62499-46cf-442a-85e8-9e19cc8d4628",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Invoice_Count_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "3714dfd1-3260-4465-8237-4548b8798440",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_PrevYear_MaxMonth))-($(vKPI_AvgSalesMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "374bdf0f-070e-492e-809d-c1e134726c9f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceReceivedPayments",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_received_payments])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "384ad99f-a7b3-49cc-b75a-2d84f79de16d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCreditVoucchers",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum(Invoice.total_credit_vouchers)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "38b2e237-873e-4d85-bb02-95d4b5965d74",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount_OverPeriod_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1003}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3aaa935b-fd4e-41c7-aa71-bb695a83042c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3ad1ff23-bc62-410c-bdb6-d603c982be06",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_PrevYear_MaxMonth))/($(vKPI_SalesItemsMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3b446446-d222-48b6-affe-dc74d3a10746",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_container",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "03.dbi-bexio-sales/7.Customers/Base",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3b7a2154-12d7-4fad-b676-ea5aa01db631",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3b8da357-b22b-4e63-ab6e-4ae1d6f34e49",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesYTD_PrevYear))/($(vKPI_InvoiceCountYTD_PrevYear))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3ce3f3bb-8ab0-444e-bad8-2e6547c9b51b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_SubTitle",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "'Current Month ('&($(vDash_KPI_MTD_Range))&')",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3e3d61af-8f4d-4421-b26e-3b291ba8563c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Year",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "3fb8f7f4-23a9-4ad1-95b9-e20bacd9eb8a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD % Change Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "40d2d68d-3e1c-4711-9984-77ec79744f20",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_MaxYear))/($(vKPI_SalesYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4290a1dc-c6c1-40dd-a6c8-e05d7757b7be",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Trend_Max_Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if(count({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year))\"}>} $(=vGlobal_RevenueType_Field)),sum({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year))\"}>} $(=vGlobal_RevenueType_Field)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "42dac987-7ff9-4a65-aa74-7c45f0156b67",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Group1_Total_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='$(=only([$(='%_Compartive_Analysis_Measure_'&vDefault_Lang)]))'&' Group1'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "436933bd-0ef3-4c16-9669-59bed2ca64aa",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "43e0be82-f3ef-4b54-9b8b-6de15b836cca",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4554b381-78fe-456a-844d-493417e69ea5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales_OverPeriod_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1001}>}$(=vDefault_Lang))  &' '&only([%_Dash_Date_Flag_Label])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "46891816-8d19-4d1a-a361-0d7a19bf076e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "481132d6-a156-41b6-9061-cc3a64b625b8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items): $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4820a260-27d6-4425-b48e-8b216520d060",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "49d42951-00e3-4b40-a3fc-5898971a5836",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers MTD: '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4a70c6ef-c011-4ab8-afd6-b2ecbd048fb0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_InvoiceRunningYearMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_InvoiceDateNum)}>}RunningYearMonthNum)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4a79df70-d865-4ea1-b84d-05dff6dfc13f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_PrevYear_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4b1a12ca-a322-46de-87d5-b24bfcff1d44",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4c7be22d-c4b8-4068-a524-1349cc638c05",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_SalesItems",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag_Current))]={1},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4d326247-ae26-4334-aa64-85feb4204818",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: '&max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4dff2987-313b-4ad7-a73a-a1ff2e78367e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4e03393a-ca91-4040-97da-1d4540c86fd7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "varMaxDate",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "44156",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "4f742bdc-ce09-4606-8296-3c51af9bbaa7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "506d1593-5161-4604-9eb6-5623163d1d37",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_PrevYear))-($(vKPI_SalesYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "51d7cb3a-ee5c-4e2a-8425-521c9ce92bdc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Range",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "'1-'&max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-1)}>} Date)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "524070f2-e80e-4ebc-a76a-aa9835187ef8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_DayOfMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}Day)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "528e1500-1e19-4571-8845-b01d925e46d7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={\">=$(=$(vSel_Max_Year)-$(=max([%_Dash_Periods])))<=$(vSel_Max_Year)\"},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5309465c-75d3-4502-918f-37ad117f0835",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_PrevYear))/($(vKPI_ContactCountYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "540dc6ef-da85-4e5e-8522-dbc1644715ec",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "541e36dc-a626-4a55-9298-4279d53377de",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_MaxYear))/($(vKPI_ContactCountYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "547978a5-6803-4c08-a73a-873d3067c165",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesYTD_Prev2Year))/($(vKPI_InvoiceCountYTD_Prev2Year))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "54a4d40c-c571-4ceb-b7e5-5b5c1ce7ddfe",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "55626b44-c85a-4f4b-bc40-efba6c7a380e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceTaxes",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "558d8f41-ed7e-48f1-8c5a-b57e23132404",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_PrevYear_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_MaxYear))-($(vKPI_AvgSalesYTD_PrevYear)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5743b169-1a07-489f-a28a-39ebf3bcc3ee",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDefault_Lang",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=GetFieldSelections([%_Global_Language])",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "5864d33d-46d2-4050-b337-bb6e417e3624",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_DayOfYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}DayOfYear)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "58fa867a-9d2e-4e66-b9bd-0cf83945cd02",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Name2",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.name_2]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "591cb32a-d12d-4306-9bc3-e16762d4d4f4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Prev2Year_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: '&max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5c5d1fbf-f31c-4518-bf30-b539eb47aa50",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD: $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5cf5401e-d425-4b46-a647-9ecec382077e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItems_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales (Items)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5d73bef1-4f26-4b29-b8bb-c7793cae0ee7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5d844a2d-8836-4690-8325-f868c396ce2c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "5e778a8e-171e-40fd-82ae-016b1813641d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_%Change_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='% Change Group1 : Group2'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6081fa2a-d85f-4d08-b0ae-6e02bcf6085b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Postcode_City",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.postcode]& ' ' &[Contact.city]",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "614b9150-7fdf-4c5b-8360-7b9e090a859c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Day_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Day",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "61731e7c-998e-4733-b326-de3d6de11559",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "63357814-e336-476a-aabd-1dc9ff2717b6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Day",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Day]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "634b3dc5-c188-4bb3-8aaf-0d492329db3d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6395414f-4656-41ac-a7a0-847e5f472ef7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesYTD_Dyn))/($(vKPI_InvoiceCountYTD_Dyn))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "64f8869d-f4d1-477c-8859-658d12c47477",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_PrevYear))/($(vKPI_SalesItemsYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "65bddc07-8ddc-48d9-91ed-c2ce73c1e53b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount_Comparison_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1002}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &' %:  '  &maxstring({<[$(=only(%_Dash_Date_Flag))]={1},               [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}              >}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "65dfb36f-7af8-4fe0-87ca-0e36c4583dc5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_MaxYear_MaxMonth))-($(vKPI_ContactCountMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "65fa72a3-fe9c-43ac-8214-62deb01028d4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "VKPI_AvgSales_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales"
+  },
+  {
+    "qInfo": {
+      "qId": "66696ae4-fbee-4c4a-816e-08e2a0b467e7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Sales",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "67011258-8d68-4269-89ff-8739f735e076",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vStatic_Today",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=num(floor(ReloadTime()))",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "677fc2ee-89a2-434f-a675-1dc46256c7d3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Invoice_Status",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Invoice.kb_item_status_id]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "68f1f628-022a-42f6-94ce-c3f46a5d29c4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Prev2Year_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "68fdce2c-8423-451b-811f-7621e069e03f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_PrevYear_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6969ff41-12d7-41e7-8387-ebe5c8efc990",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6b36d7e3-f52d-41d9-9033-f99776525610",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_PrevYear_MaxMonth))-($(vKPI_SalesItemsMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6b3c7647-d875-4166-9feb-9fa29d323d8b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items): $(=($(vSel_Max_Year)-2))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6b61884a-9f2d-427c-a64e-9c2c7cbc2000",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales YTD: '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6c0dbad5-d95c-483b-befe-2d356156cbdf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers YTD Between '&($(vSel_Max_Year)-$(=max([%_Dash_Periods])))& ' and '& $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6c97435e-408f-44f2-af25-83e3e5a77e4d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_City",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.City]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6dd6dc2c-fd8d-4d07-a2ba-094e136a48f4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Comparion_Title",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Previous_Month_Comparison_Index]='overview-kpi-previous-month-compare-previous-year',Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-13)}>} MonthYear),'MMMM-YYYY'),if([%_Overview_KPI_Previous_Month_Comparison_Index]='overview-kpi-previous-month-compare-previous-month',Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-2)}>} MonthYear),'MMMM-YYYY'),if([%_Overview_KPI_Previous_Month_Comparison_Index]='overview-kpi-previous-month-compare-running-12-months','AVG '& Date(Max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-13)}>} MonthYear),'MMMM-YYYY')&'-'&Date(max({<RunningYearMonthNum={$(=only({1<[_Flag_LastFullDay]={1}>}RunningYearMonthNum)-2)}>} MonthYear),'MMMM-YYYY'))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6df0452d-a00c-48a1-b358-0aeb6284fc30",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6e272ba0-96d7-4205-b859-027d1be2033c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD Difference Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6fd0f9fd-7031-493f-bc06-b1e4930a7108",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount_OverPeriod",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag))]={1}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6fe867c0-22da-4181-8a66-475f9b200c59",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "6fe97a57-bd99-4d9b-8930-1d01edaad146",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "709b9f31-e6cc-4131-957f-00e4e79fec4d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices MTD: '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "717cc45f-6e94-47b4-a910-0c293c9ecacb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Prev2Year_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items): '&max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "71e45801-74cf-4460-ae05-bd1f58719001",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount_OverPeriod_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1002}>}$(=vDefault_Lang))&' '&only([%_Dash_Date_Flag_Label])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "72546d3b-83e1-45a2-9553-cc52fe5f8616",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Product_Unit_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Product Unit",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "728d071c-48ad-4f77-91bc-3d4bfeb1703a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Product_Name",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Article.intern_name]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "72a412e4-eeef-4e5b-85e2-c404c941cd9a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) % Change Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "72e6d5c8-cf1c-4bc9-a926-317ed1440060",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCount",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "73aadc4c-25aa-46c4-8413-f15d5f7c3498",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "74211e80-99d3-4198-a663-fa3dda2f8ef8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesYTD))/($(vKPI_InvoiceCountYTD))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "748f47cc-6b7d-448a-979f-da0a8c85c973",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "768c178d-7725-4975-9fb6-adc89739d817",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items): '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "76bda5fc-405a-4f14-8259-83cebd9ab7d8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_PrevYear_MaxMonth))/($(vKPI_InvoiceCountMTD_PrevYear_MaxMonth))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7802c169-aa41-405d-8b9a-29f5c000324c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7845a0ad-bf08-476c-990e-2a40f7619410",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_PrevYear_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "78565b12-dfb4-4ea0-a80a-e8f92bb38af3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1003}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &':  '  &maxstring({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "78cefb69-7437-452e-93c3-05e751b54979",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Birthday_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer Birthday",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "79dd6620-5387-4523-a5e0-82d522222aca",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7a143576-bfa2-4123-bc7c-4e1cdcf49974",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<RunningYearMonthNum={\">=$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))<=$(vSel_Max_RunningYearMonth)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7a1989fa-3ebb-4f05-9302-9c4613599c91",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7a9b4a4b-18a9-4004-b6ac-0bac6a5686e0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_run_user",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "UserDirectory=VM-I-QS-DEV; UserId=christof.schwarz",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7b3c463f-9a11-4f66-aea2-340300104e37",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD: $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7cdd1854-a771-40a5-8d9b-88cb5a1569ac",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "7ce51aa4-4e14-4cf8-ab0d-59e2424d489c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD Between '&max({<[RunningYearMonthNum]={$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))}>}YearMonthNum) & ' and '& max({<[RunningYearMonthNum]={$(vSel_Max_RunningYearMonth)}>}YearMonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "806f7657-b7db-4177-b73a-c7a09f4450c6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount_Comparison",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsContact]))/(sum({<[$(=only(%_Dash_Date_Flag))]={1},      [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}[%Flag_IsContact]))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "80c1231a-6b10-4167-9e3e-0abfe82ab5cd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Prev2Year_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers MTD: '&max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "80e20428-a58d-48ff-af9e-35ed07aba8ea",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceDate_Last",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "max({<[%Flag_IsInvoice]={1}>}Date)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "80f99f5e-0efb-4e51-af48-3378b26e81ea",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Delta_Value",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-year',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)}>}$(=vGlobal_RevenueType_Field)) , '#,##0'),',',chr(39)),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-month',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-1)}>}$(=vGlobal_RevenueType_Field)) , '#,##0'),',',chr(39)),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-running-12-months',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - ((sum({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}$(=vGlobal_RevenueType_Field)))/(count({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}distinct RunningYearMonthNum))) ,'#,##0'),',',chr(39)))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "82ede6b6-3ea2-49be-baa3-53d380957174",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_SalesItems_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1004}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &':  '  &maxstring({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "83b08268-8594-4bbb-b73c-509190279871",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Product_Name_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Product Name",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "847ae12d-386c-423d-8966-6636176241c2",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) Difference Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "84ae80a5-1199-4ba5-9e5a-94d2767c64bc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "VKPI_AvgSales",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_Sales))/($(vKPI_InvoiceCount))"
+  },
+  {
+    "qInfo": {
+      "qId": "84fe3fdd-2446-4fda-917b-286f6836a01a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "854b27b1-d9f6-4755-872b-be979730ffa0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD % Change Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "858babd6-d691-4f8a-94e3-5426163e1a7f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD Difference Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "85d5a9ff-5e4f-43a3-8ed0-09b5f23eec52",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_PrevYear_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_MaxYear))/($(vKPI_AvgSalesYTD_PrevYear)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "875069c8-621b-48d7-881d-488b2caad13e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD: $(vSel_Max_MonthYear)'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "877324c8-c4a2-4e2f-98c7-677c717dd254",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_PrevYear_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_MaxYear_MaxMonth))-($(vKPI_SalesItemsMTD_PrevYear_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "87de0e20-374d-49e6-8642-318e9f2f492d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD: $(vSel_Max_MonthYear)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "88207286-52f9-4a87-86e5-07bd54213f22",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "88a2a45d-a99c-431b-ac05-42ba862e8522",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_run_start_timestamp",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "20201122201037000",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "88fb7c09-fcd7-4692-825b-227ed117fecf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_SubTitle",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "'Last Month ('&($(vDash_KPI_PreviousMonth_Range))&')",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8909e449-ab24-429a-a200-b1898fdc3a0f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items): $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "89231ea8-a9b2-45ee-a7a2-0be5406af61d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_PrevYear_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "898c73f8-aee0-4774-a9fe-1280b13153aa",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItems",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8b5785aa-68d9-4e61-a706-3e9ff7bd0759",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8c6a0b25-fbc4-4c01-8077-a49769f955b3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8cd1df17-c426-40d5-bd22-fc328c626a27",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) % Change Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8e90a4f3-0fa9-44ea-b63a-1f9cc011a3f1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Prev2Year_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8ecf5e23-c86a-4b89-ac58-5be9f191e6a7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_run_id",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "N+ERG8T<Y/I:@;FLP5B\\L$",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "8fd925b0-7dfd-4c71-896f-aba98775e584",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1000}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &':  '  &maxstring({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "90f4e1c1-f862-48c8-b794-f9b2f7119a2f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_PrevYear_MaxMonth))-($(vKPI_InvoiceCountMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "90fbd673-5922-4f26-bb49-d96c5b13ed47",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_MaxYear_MaxMonth))/($(vKPI_SalesMTD_PrevYear_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "91c15c61-1c1b-4564-97f4-b89f8649d961",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_PrevYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_PrevYear_MaxMonth))-($(vKPI_SalesMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9260b37a-d3dc-48fc-870a-ee3ed3511538",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD % Change Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "92b5fc54-71b0-4ce1-9198-66874755149b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Delta_Change",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-year',num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)}>}$(=vGlobal_RevenueType_Field))-1 , '#,##0.0%'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-month',num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-1)}>}$(=vGlobal_RevenueType_Field)) -1 , '#,##0.0%'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-running-12-months',num(sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / ((sum({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}$(=vGlobal_RevenueType_Field)))/(count({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}distinct RunningYearMonthNum))) -1 ,'#,##0.0%'))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "93c1d9d7-4230-491f-b239-bbcd16397c2d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Country",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Contact.Country]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9505e545-ff2e-4c6b-b289-61c2ace61144",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCount",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "957dd421-bf87-4b44-9d38-94fde125943f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers MTD: '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "95dc7935-e69c-479a-90de-28c0f6cc6e7d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "95eafa89-20fb-4f18-bd5e-caa879471cbd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Difference Group1 - Group2'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "96eb3000-1c43-416f-a9e7-aead78019076",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_PrevYear_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "97ab81f1-a50d-4cf0-b67a-353bf8af5065",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_MaxYear_MaxMonth))/($(vKPI_InvoiceCountMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "98104b6a-b606-48c3-be85-8ced3e141a53",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9825f729-8a7b-456e-937b-5db4436b6043",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_MaxYear))-($(vKPI_ContactCountYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "98dd980a-e7f9-4a4d-96c6-a4f2719fc613",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items) Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "98f54e19-93d7-440a-acd8-e4de41458441",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_InvoiceYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_InvoiceDateNum)}>}Year)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "992249e6-88c3-4011-8f82-1320e21385fb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD: $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "996e524d-b4e1-45ac-a717-1d771886176e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD % Change Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "99cfd606-3cd7-45bb-94d1-9b9fb8b76e96",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items) Between '&max({<[RunningYearMonthNum]={$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))}>}YearMonthNum) & ' and '& max({<[RunningYearMonthNum]={$(vSel_Max_RunningYearMonth)}>}YearMonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9a081036-e7d0-4694-8ce3-159d33ee094e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD: $(=($(vSel_Max_Year)-2))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9a2335d5-b14c-4e99-9301-1e7ee1cfa127",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Trend_Previous_Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "If(count({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year)-1)\"}>} $(=vGlobal_RevenueType_Field)),sum({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year)-1)\"}>} $(=vGlobal_RevenueType_Field)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9a318f7a-1e86-4eda-81c7-69c58ac44b88",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9acd778c-6794-48ee-a5fb-583a026d635f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1001}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &':  '&maxstring({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}$(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9b69c7e2-643c-4557-89d4-506a74a679ba",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Postcode_City_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer Postcode City",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9c0c3dbd-0d14-48ff-8a5a-c785c38ddaa8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_MaxYear_MaxMonth))-($(vKPI_SalesItemsMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9c3b4d7b-c33d-4360-b028-a989400385eb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9cb12690-014b-48e2-b4dc-e8c1a2fc8b06",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_PrevYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9d1a6912-6f30-4e03-bb08-84001b75feb9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Customers MTD Between '&max({<[RunningYearMonthNum]={$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))}>}YearMonthNum) & ' and '& max({<[RunningYearMonthNum]={$(vSel_Max_RunningYearMonth)}>}YearMonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9d825b6e-b8f8-4601-a6fd-3bdf4e387d42",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales_Comparison_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1001}>}$(=vDefault_Lang))&' '&only([%_Dash_Date_Flag_Label])&' %:  '&maxstring({<[$(=only(%_Dash_Date_Flag))]={1},[$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}$(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9e1da8ed-1638-4f5e-a443-93c4508050b4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices MTD: '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9ef410be-81ae-4a65-918e-f32b54ccdec5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1002}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &':  '  &maxstring({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9fa1708b-5d7b-416d-8d37-5153e80addf9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Prev2Year_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices MTD: '&max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "9fe98111-371f-42ec-969b-468685949613",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_MaxYear_MaxMonth))/($(vKPI_InvoiceCountMTD_PrevYear_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a0300431-6fca-4614-84cc-42407c06b43e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a13941e9-61c3-47bc-aaae-0ae5809b73bf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCount_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1003}>}$(=vDefault_Lang))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a171d7f9-8e39-464d-8c98-f8e25b48f86c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales YTD: '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a23cfa7c-8af7-4986-8c73-d817317dfb51",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Name_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=Only({<Index={2}>} [])",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a289b034-0bab-4bd9-8d66-c9862378acdc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales_OverPeriod",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag))]={1}>}[Invoice.total_net]+[Invoice.total_taxes])/sum({<[$(=only(%_Dash_Date_Flag))]={1}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a2ec29b2-11cb-485e-9749-ed95a67567d5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_PrevYear_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesMTD_MaxYear_MaxMonth))-($(vKPI_SalesMTD_PrevYear_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a3488ed0-2fb6-4489-a49a-cd061df596ff",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_MaxYear_MaxMonth))/($(vKPI_AvgSalesMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a355aa55-63d0-42ec-aba3-bff7c8c11b6f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a3a78ec3-5f2d-4721-952e-e3b984fea6f7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_DateNum",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=num(if([%_Dash_Max_Date]='Last Invoice',vSel_Max_InvoiceDateNum,vStatic_Today))",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a4294707-3f8a-43cd-a920-e49d7a1a58c7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD Difference Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a434b8e3-d761-48c3-9581-5146a8fef211",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<RunningYearMonthNum={\">=$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))<=$(vSel_Max_RunningYearMonth)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a4a498a6-4961-42b0-a1bc-ba248d0b1e0e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear_Prev2Year_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD Difference Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a5a98632-38fe-4c99-97bc-848a492e8792",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Type_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer Type",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a6709823-420c-47b5-9449-762ddfe946d0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_MaxYear))-($(vKPI_SalesYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a77a0392-643a-4200-af69-58301bb0bbb9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_PrevYear_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_MaxYear))-($(vKPI_SalesYTD_PrevYear)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a86384a4-0afd-4869-b46d-67cf0728b8b6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDefault_Date_Field",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Y",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a96d3e06-8718-4578-964b-f24ef425a1c9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSales",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_Sales))/($(vKPI_InvoiceCount))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a9c3e59e-3d38-4898-8eda-fd0c75c810c5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_MaxYear))/($(vKPI_AvgSalesYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "a9c3e75a-4f9f-4c93-9835-53163b77a366",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Month_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Month",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "aa0f4279-322b-44bc-a955-571ffaf3f107",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "aa436d8c-010b-4ec4-9e1a-822542a4e6b2",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD Difference Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "aaa861f6-e867-409c-bb5e-d05f5fc67f91",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ab29f982-7d9b-4944-bd49-7885d17ee8c1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ab8c75b2-dcaa-4484-b21e-8b7240bc53dc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_PrevYear_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "abac30da-77e3-498d-8326-de282e2262c6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD: '&($(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ad524239-e7f2-4416-b144-225671ac13f4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={\">=$(=$(vSel_Max_Year)-$(=max([%_Dash_Periods])))<=$(vSel_Max_Year)\"},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "aed54366-365b-4968-bef1-ca632f7a5a28",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Prev2Year_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_Prev2Year_MaxMonth))/($(vKPI_InvoiceCountMTD_Prev2Year_MaxMonth))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "af3c4514-b816-4bc0-bb7c-db7c2a32463e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={\">=$(=$(vSel_Max_Year)-$(=max([%_Dash_Periods])))<=$(vSel_Max_Year)\"},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "afd25265-5720-4698-8c54-25df0a1558c0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_PrevYear_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_MaxYear))/($(vKPI_ContactCountYTD_PrevYear)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b0b6d655-c1d2-4423-a489-397d00f950a5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_MaxYear))/($(vKPI_InvoiceCountYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b0bd7f4b-1edb-4e52-8fe0-bbd88819b0f4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD Between '&max({<[RunningYearMonthNum]={$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))}>}YearMonthNum) & ' and '& max({<[RunningYearMonthNum]={$(vSel_Max_RunningYearMonth)}>}YearMonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b0ec8c49-3897-4fb6-8500-d96133f97b0b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_Group1_Total",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "$(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group1'))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b19a8220-8a8a-421f-807c-3527cbc1bca1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_PrevYear))-($(vKPI_InvoiceCountYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b29026d4-aad5-43e0-8292-d951f34b26ae",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_PrevYear_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b2a78119-2409-44b3-8a00-9907a8a45202",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_PrevYear_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_MaxYear))-($(vKPI_SalesItemsYTD_PrevYear)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b2c1fa60-18ea-440f-81f7-572e8091a013",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Delta_Change",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-year',num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)}>}$(=vGlobal_RevenueType_Field))-1 , '#,##0.0%'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-month',num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-1)}>}$(=vGlobal_RevenueType_Field)) -1 , '#,##0.0%'),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-running-12-months',num(sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) / ((sum({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}$(=vGlobal_RevenueType_Field)))/(count({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}distinct RunningYearMonthNum))) -1 ,'#,##0.0%'))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b4a8e615-2287-494c-938a-69b6e59fba04",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceNet",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_net])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b4e15795-f43f-4142-bf5d-e9ac77ded2b0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Product_Unit",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Article.unit_name]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b4f861b8-71c3-4125-815d-8abae5a4f369",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales MTD: $(vSel_Max_MonthYear)'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b5adecac-b3fa-4d01-bd36-422c59c5eab4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b6a2de6c-9e6f-45cb-b905-637d0687164e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "aaaa",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Year",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "b6b84b54-9b40-43b5-aa64-6700f0a8152a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_PrevYear_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b8a23fc6-d9ee-488a-b70a-21e1a324ecc3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "b94a9439-a8f5-4c90-9925-94a32269fa1a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "babfb062-ca8d-4216-8e24-07303a6e3e63",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices MTD Between '&max({<[RunningYearMonthNum]={$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))}>}YearMonthNum) & ' and '& max({<[RunningYearMonthNum]={$(vSel_Max_RunningYearMonth)}>}YearMonthNum)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "bb750bca-f6d3-421d-8861-468e2fca71b8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_PrevYear_MaxMonth))-($(vKPI_ContactCountMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "bc34a340-9296-4c47-86a0-1958d65e2325",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "be5e8c2b-6ec4-4e01-89f3-8fd6f41e08d5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceRemainingPayments",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum([Invoice.total_remaining_payments])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "bf3cf09e-4c3e-4588-b900-a85362d7f81a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales_Comparison",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "((sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[Invoice.total_net]+[Invoice.total_taxes]))/(sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsInvoice])))/(sum({<[$(=only(%_Dash_Date_Flag))]={1},[$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}[Invoice.total_net]+[Invoice.total_taxes])/sum({<[$(=only(%_Dash_Date_Flag))]={1},[$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}[%Flag_IsInvoice]))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "bfc83b5a-1a93-4099-ad59-64dc56718faf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_PrevYear_MaxMonth))/($(vKPI_ContactCountMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c03c9d2d-3be0-4738-8b0a-3319924aa6ba",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_PrevYear_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_MaxYear))-($(vKPI_InvoiceCountYTD_PrevYear)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c122af25-c0d2-4bae-8c95-357ad20698bd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<RunningYearMonthNum={\">=$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))<=$(vSel_Max_RunningYearMonth)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c1c0b741-b3e7-4cf8-92c4-1aea9034a6b8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_MonthYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}MonthYear)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c2aeb7c8-7fb2-4a4a-9528-ca44c0869d9b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c2d52491-e44f-4360-89bc-afb743f716a0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='# Invoices MTD: '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c3c20cdf-a0d9-453f-aa36-33d2af8ffc7c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c5432ab5-6777-42ca-8f3b-31471b98ba23",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_machine_name",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "vm-i-qs-dev",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c5dc18ce-9b34-450f-8ba3-1315417c1e36",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c6e5da5e-097a-4710-8a65-3f8d5eeaa405",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Year]",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c72a6312-ced7-4919-bdb2-e489279d5b25",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Document_No",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Invoice.document_nr]",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c766a4c5-6dd7-453d-b7f0-18e69347ff62",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_RunningYearMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}RunningYearMonthNum)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c7f323cb-2928-4c14-b5f0-1adcea09a69b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c882b618-7dfa-4d34-b1ca-8c8b9df9142f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_Sales",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "c88d66fd-7836-4e5d-9e18-81bd8faf0ab8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_PrevYear))/($(vKPI_AvgSalesYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ca90eff0-aa2d-46df-a4f5-64b5f0f5b0b4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Title",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vGlobal_RevenueType))&' LM'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cb350cc1-d1f0-49ff-a23d-70415091717c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_CustomerCount_Comparison_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=  only({<Index={1003}>}$(=vDefault_Lang))  &' '  &only([%_Dash_Date_Flag_Label])  &' %:  '  &maxstring({<[$(=only(%_Dash_Date_Flag))]={1},               [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}              >}              $(=only([%_Dash_Date_Field_Label])))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cba71b1f-840a-4d04-95a6-9e89d4ebbd36",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceDate_Last_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Last Invoice Date",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cca24caa-8a04-4a2a-943f-e019e08978c4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_InvoiceDateNum",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({<[%Flag_IsInvoice]={1}>}DateNum)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cce3c1d2-70ab-44e9-b6fe-cdb6e417957b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cd1acbdf-ebb8-4e1a-b5c5-90f62d57a23e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cd6ab3f8-f801-44fa-9bd6-7cff4c764ff5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_MaxYear_MaxMonth))/($(vKPI_AvgSalesMTD_PrevYear_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cd8901e8-4235-4d05-81ee-8e721e655d40",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD (Items) % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ce5e8d96-fdca-4fa6-ad2a-9b21dd8904ea",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_Name2_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer Name",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cf397376-dcee-4543-9cc5-0f1ff066d9f6",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Max_InvoiceDate",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "max({<[%Flag_IsInvoice]={1}>}Date)"
+  },
+  {
+    "qInfo": {
+      "qId": "cf3f2ae5-b9d5-4a43-855b-8b1fbd8db230",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "varCurrentDayOfQuarter",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "52",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "cf5d4746-8afc-49ec-aa2b-5a1690b75ed8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items): '&$(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d0002790-4a44-4756-bb04-85529dcb60c9",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Delta_Value",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-year',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)}>}$(=vGlobal_RevenueType_Field)) , '#,##0'),',',chr(39)),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-previous-month',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - sum({<[_Flag_MTD]={1},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-1)}>}$(=vGlobal_RevenueType_Field)) , '#,##0'),',',chr(39)),if([%_Overview_KPI_Current_Month_Comparison_Index]='overview-kpi-current-month-compare-running-12-months',replace(num( sum({<[_Flag_CurMTD]={1}>}$(=vGlobal_RevenueType_Field)) - ((sum({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}$(=vGlobal_RevenueType_Field)))/(count({<[_Flag_MTD]={1},RunningYearMonthNum={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-)\"}>}distinct RunningYearMonthNum))) ,'#,##0'),',',chr(39)))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d096a4c7-5a71-4d3e-9612-8069c33df413",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales YTD Between '&($(vSel_Max_Year)-$(=max([%_Dash_Periods])))& ' and '& $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d09cd613-1326-4ede-8504-fb5b72fd50e1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDynamicReport_Concat_Dim_Index",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "concat([%_Dynamic_Report_Dimension_Index])",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "d1452f4e-ac90-4d5b-83f5-527a7168883e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_Dyn_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales YTD (Items) Between '&($(vSel_Max_Year)-$(=max([%_Dash_Periods])))& ' and '& $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d21d9103-3b4f-4f6a-87c9-0d7765164c34",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD % Change Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d3a09ea3-4658-4d6c-8e44-37bc90f19987",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_PrevYear_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsYTD_MaxYear))/($(vKPI_SalesItemsYTD_PrevYear)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d44d3755-9024-4f8f-94e3-bbb047add3be",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Customer_City_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Customer City",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d4791b89-e5a1-4ad2-b7e5-27873f906d63",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Title",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vGlobal_RevenueType))&' MTD'",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d4f69e8b-126c-4109-acaf-d82d1b52b846",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Prev2Year_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD: '&max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d53dbfc9-1b1f-403c-aae6-78aedd3ece9c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD: $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d5699c30-e0c0-4cf4-812a-5045616c1e54",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_PrevYear_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d5a8eef7-8f22-4eb6-b2fb-da23e9cc2d5c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d722fe84-0507-471a-a453-218603d134e1",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_PrevYear_Prev2Year_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_PrevYear))/($(vKPI_SalesYTD_Prev2Year)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d8e4b978-2e49-4ce3-a794-e3ec166314b4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_app_id",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "946c65b3-6f0f-4a65-bc5e-2dae62bcefbd",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d9126a2e-f8e4-40f1-b7ac-4cada6217e0f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCount_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1002}>}$(=vDefault_Lang))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "d9993779-de9d-4bc0-a06a-a308cb0f4634",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vSel_Max_Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=max({1<[DateNum]={$(vSel_Max_DateNum)}>}Year)",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "da52f92e-058e-4938-a285-ed42cc815944",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_Prev2Year_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_MaxYear_MaxMonth))-($(vKPI_AvgSalesMTD_Prev2Year_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "dae12a6e-1164-4d76-b407-c75264ebcb74",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDynamicReport_Concat_Measure_Index",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "concat([%_Dynamic_Report_Measure_Index])",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "dbe0150d-b98f-4ddb-82f2-403d830271f5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD % Change Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "dc7297a0-b153-4d0e-85ea-f7d712ac126e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "dcb38acd-b852-496e-a9ab-b33da8786abf",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSales_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "=only({<Index={1001}>}$(=vDefault_Lang))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "dd4b867d-011f-44e0-bd65-c2ccec190112",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Avg Sales YTD: '&($(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ded011f1-b59f-4eda-b4cb-144046a479e7",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_AvgSales",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[Invoice.total_net]+[Invoice.total_taxes])/sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "df581e0f-8799-4e21-b983-dbb5b0d98b4f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountMTD_PrevYear_MaxMonth))/($(vKPI_InvoiceCountMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "df7cb529-f05e-4464-8220-fe86d00dc2af",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear_PrevYear_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e0426155-bd1c-4b7d-9bd7-e2746acd3436",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e0cd9b70-04b4-405a-be45-8c04c4aeede8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_PrevYear_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesYTD_MaxYear))/($(vKPI_SalesYTD_PrevYear)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e1a5d4b5-335a-49e7-b3a1-059bc646b95c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_MaxYear_MaxMonth))/($(vKPI_ContactCountMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e2a40fbc-43cb-4660-9f62-4268df195800",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Invoice_Status_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Invoice Status",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e3017fbd-2a1a-4133-97d1-a2efaed00dba",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear_PrevYear_MaxMonth_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountMTD_MaxYear_MaxMonth))-($(vKPI_ContactCountMTD_PrevYear_MaxMonth)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e30d4faa-303a-4ebc-880d-9f58523c1c60",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_PrevYear_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_MaxYear))/($(vKPI_InvoiceCountYTD_PrevYear)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e4756f37-b677-44a3-ae05-7ea2402184cc",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"},Invoice.kb_item_status_id={'8','9','16'}>}[Items.unit_price]*[Items.amount])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e7273461-75c9-47f4-9d98-8c9bfa7e93f8",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_SalesItemsMTD_MaxYear_MaxMonth))/($(vKPI_SalesItemsMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e7d9fe30-50c0-4aeb-9ed1-68529d1d9d85",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Month",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "[Month]",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e832a440-6e07-40e9-a853-4ccbddf9b00a",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e84b4a50-71fa-412d-b6b0-f8342df025ed",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_Max_InvoiceDate_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Last Invoice Date"
+  },
+  {
+    "qInfo": {
+      "qId": "e8da7cc6-9080-48b5-85e4-6270cd862032",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_Dyn",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<RunningYearMonthNum={\">=$(=$(vSel_Max_RunningYearMonth)-$(=max([%_Dash_Periods])))<=$(vSel_Max_RunningYearMonth)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e8e04055-a518-4692-a8a7-f516fb825789",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_Prev2Year",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={\"<=$(vSel_Max_MonthNum)\"},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "e9e0d26c-803e-4897-a210-6ef8a9b3b50d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountMTD_MaxYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "eae2f18f-380f-40dc-a3ad-2f7f0abbfd6d",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD % Change Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "eb0469b9-daac-44b0-9fae-88221c31e224",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_MaxYear_PrevYear_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_ContactCountYTD_MaxYear))-($(vKPI_ContactCountYTD_PrevYear)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "eb502e0f-6817-4a11-b4cd-67252ea19704",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_Prev2Year_MaxMonth",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "ee476e5f-6b0d-4ebb-99c5-4dcb3c9b3db3",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_PrevYear_Prev2Year_MaxMonth_Diff_Percent",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesMTD_PrevYear_MaxMonth))/($(vKPI_AvgSalesMTD_Prev2Year_MaxMonth)))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "eef15799-8e6f-4672-9ddd-d081e9f2c843",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_PrevYear_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "eefe3e39-6ab1-4a6a-8bea-923d54852e43",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_AvgSalesYTD_PrevYear))-($(vKPI_AvgSalesYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f10dae8b-7423-457b-93cb-02560886e2cd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDIM_Document_No_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Document No.",
+    "tags": [],
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f14ed3cc-e688-4a3f-93b5-89ac53ad287c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_MTD_Value",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "replace(num(sum({1<[_Flag_CurMTD]={1}>} $(=vGlobal_RevenueType_Field)),'#,##0'),',',chr(39))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f1b1ed4d-55e4-40e4-9691-5fffc2324265",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "aaa",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "1",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "f1ee58ce-fb26-4073-98d7-db3a34844eab",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountYTD_Prev2Year_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers YTD: $(=($(vSel_Max_Year)-2))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f22be6ef-4bda-45ef-8941-721ea85be1ac",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[Invoice.total_net]+[Invoice.total_taxes])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f2dacc91-1bc5-484b-b9a7-edf69e3e62fb",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesYTD_MaxYear))/($(vKPI_InvoiceCountYTD_MaxYear))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f2edf90b-7cdb-493a-91c8-49feed4815b2",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceDate_DaysSinceLast",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "today()-($(vKPI_InvoiceDate_Last))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f348991a-23ed-46df-8171-facd8348f907",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "aa",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "only({<Index={$1}>}EN)",
+    "tags": []
+  },
+  {
+    "qInfo": {
+      "qId": "f5827d12-1f05-4dea-ad5b-b1d444342912",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_Prev2Year_Diff",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(($(vKPI_InvoiceCountYTD_MaxYear))-($(vKPI_InvoiceCountYTD_Prev2Year)))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f62ce1c2-18ac-4c29-a4f5-5f14477d5d87",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD: $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f6d2ac4c-d33a-462b-ac24-86ae1979671f",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[Day]={\"<=$(vSel_Max_DayOfMonth)\"}>}[%Flag_IsContact])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f7487d22-70d3-4b09-b447-03719d100877",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vr_app_name",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "03.dbi-bexio-sales__Base__App_DEV(4)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f83961f9-cdb9-406e-8c9f-e32c56600636",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear_PrevYear_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Invoices YTD Difference Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-1)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f8c1f68a-0b7f-469b-984c-9b764eb0993c",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vComparative_%Change",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(1- ($(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group1'))/$(=replace(only([%_Compartive_Analysis_Measure_Expression]),'_AlternateState_','Group2'))))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f8cc0c30-71e5-43bb-8f24-5fe3478db2ee",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_KPI_PreviousMonth_Value",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "replace(num(sum({1<RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-1)}>} $(=vGlobal_RevenueType_Field)),'#,##0'),',',chr(39))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f91dc5bd-2ad5-474d-81d2-40af862efdd5",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_PrevYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD % Change Between $(=$(vSel_Max_Year)-1) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f95b77f7-308f-4d00-af67-155fe934e092",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vDash_Dyn_InvoiceCount_Comparison",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "(sum({<[$(=only(%_Dash_Date_Flag_Current))]={1}>}[%Flag_IsInvoice]))/(sum({<[$(=only(%_Dash_Date_Flag))]={1},      [$(=only(%_Dash_Date_RunningNumber))]={$(=max([$(=only(%_Dash_Date_RunningNumber))])-$(=only([%_Dash_Periods])))}>}[%Flag_IsInvoice]))-1",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "f95c7b56-5bbe-498e-9db7-2b5cc4e07807",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_ContactCountMTD_PrevYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "# Customers MTD Difference Between $(=max({<[Year]={$(=vSel_Max_Year-1)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear])) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fad2ac87-cb23-415b-84bf-2f3998ea733e",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsMTD_MaxYear_MaxMonth_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales MTD (Items): $(vSel_Max_MonthYear)'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fb07bff5-2308-4323-983e-ebee0b9928fd",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesYTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "='Sales YTD: $(vSel_Max_Year)'",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fb965853-90cf-4855-822d-7f36dd535eb4",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesMTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "($(vKPI_SalesMTD_MaxYear))/($(vKPI_InvoiceCountMTD_MaxYear))",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fba9ddf6-8d08-40e1-9126-ad4dbe28c876",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_PrevYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(=vSel_Max_Year-1)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fbf7d47e-1e13-43e6-a69a-0120d6ede4ff",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesItemsYTD_MaxYear_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales YTD (Items): $(vSel_Max_Year)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fc8e98eb-30bc-4f0f-b55f-db74b4aa52c0",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_AvgSalesYTD_MaxYear_Prev2Year_Diff_Percent_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Avg Sales YTD % Change Between $(vSel_Max_Year) and $(=$(vSel_Max_Year)-2)",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fdaa13b6-9b69-4aab-8393-c68ac4030f7b",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_InvoiceCountYTD_MaxYear",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "sum({<[Year]={$(vSel_Max_Year)},[DayOfYear]={\"<=$(vSel_Max_DayOfYear)\"}>}[%Flag_IsInvoice])",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fdb6e966-e581-4b20-af02-02c0fc612b62",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "varMinDate",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "42824",
+    "qIsScriptCreated": true
+  },
+  {
+    "qInfo": {
+      "qId": "fefaa2bd-78f0-4eef-a0c3-3c4423857f14",
+      "qType": "variable"
+    },
+    "qMetaDef": {},
+    "qName": "vKPI_SalesMTD_MaxYear_Prev2Year_MaxMonth_Diff_Label",
+    "qNumberPresentation": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "qDefinition": "Sales MTD Difference Between $(vSel_Max_MonthYear) and $(=max({<[Year]={$(=vSel_Max_Year-2)},[MonthNum]={$(vSel_Max_MonthNum)}>}[MonthYear]))",
+    "qIsScriptCreated": true
+  }
+]

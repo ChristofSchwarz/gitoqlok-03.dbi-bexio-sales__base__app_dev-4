@@ -1,0 +1,357 @@
+[
+  {
+    "qInfo": {
+      "qId": "a748eb34-cd24-44fd-871e-fb5b19fd1296",
+      "qType": "bookmark"
+    },
+    "qMetaDef": {
+      "title": "Bookmark 1",
+      "description": ""
+    },
+    "creationDate": "2020-11-06T12:55:50.074Z",
+    "sheetId": "9d4889d4-d96a-4f23-a9b4-603a6140b66b",
+    "selectionFields": "%_Dash_Date_Dimension, %_Dash_Periods, %_Global_Language, %_Overview_Chart_Period_Value, %_Global_Revenue_Type_Value, %_Global_Active_Customer_Period_Value, %_Overview_KPI_Month_Comparison_Value, %_Overview_Trend_Period_Value, %_Global_Company_Focus_Value",
+    "qData": {
+      "qBookMark": {
+        "qStateData": [
+          {
+            "qStateName": "$",
+            "qFieldItems": [
+              {
+                "qDef": {
+                  "qName": "%_Dash_Date_Dimension",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Dash_Periods",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Language",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Overview_Chart_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Revenue_Type_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Active_Customer_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Overview_KPI_Month_Comparison_Value",
+                  "qType": "NOT_PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Overview_Trend_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Company_Focus_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              }
+            ]
+          },
+          {
+            "qStateName": "Group1",
+            "qFieldItems": []
+          },
+          {
+            "qStateName": "Group2",
+            "qFieldItems": []
+          }
+        ],
+        "qUtcModifyTime": 44141.538773148146,
+        "qVariableItems": [],
+        "qPatches": []
+      }
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "e19173ce-ff4a-4874-aeaf-b4d36f56c525",
+      "qType": "bookmark"
+    },
+    "qMetaDef": {
+      "title": "Christof",
+      "description": ""
+    },
+    "creationDate": "2020-11-22T19:54:38.328Z",
+    "sheetId": "074c9365-846d-4898-a4be-5565f107b76d",
+    "selectionFields": "%_Global_Language, %_Overview_Chart_Period_Value, %_Global_Revenue_Type_Value, %_Global_Active_Customer_Period_Value, %_Overview_Trend_Period_Value, %_Global_Company_Focus_Value",
+    "qData": {
+      "qBookMark": {
+        "qStateData": [
+          {
+            "qStateName": "$",
+            "qFieldItems": [
+              {
+                "qDef": {
+                  "qName": "%_Global_Language",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Overview_Chart_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Revenue_Type_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Active_Customer_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Overview_Trend_Period_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              },
+              {
+                "qDef": {
+                  "qName": "%_Global_Company_Focus_Value",
+                  "qType": "PRESENT"
+                },
+                "qSelectInfo": {
+                  "qRangeLo": "NaN",
+                  "qRangeHi": "NaN",
+                  "qNumberFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "qRangeInfo": [],
+                  "qContinuousRangeInfo": []
+                },
+                "qValues": [],
+                "qExcludedValues": []
+              }
+            ]
+          },
+          {
+            "qStateName": "Group1",
+            "qFieldItems": []
+          },
+          {
+            "qStateName": "Group2",
+            "qFieldItems": []
+          }
+        ],
+        "qUtcModifyTime": 44157.829618055555,
+        "qVariableItems": [],
+        "qPatches": []
+      }
+    }
+  }
+]

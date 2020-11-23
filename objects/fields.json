@@ -1,0 +1,2639 @@
+[
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Field",
+    "qCardinal": 241,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$FieldNo",
+    "qCardinal": 46,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Fields",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Info",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Rows",
+    "qCardinal": 14,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qIsHidden": true,
+    "qIsSystem": true,
+    "qName": "$Table",
+    "qCardinal": 29,
+    "qTags": [
+      "$ascii",
+      "$text",
+      "$key",
+      "$hidden",
+      "$system"
+    ],
+    "qSrcTables": []
+  },
+  {
+    "qName": "%Article_ID",
+    "qCardinal": 55,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Article",
+      "Items"
+    ]
+  },
+  {
+    "qName": "%Bank_Account_ID",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Calendar_ID",
+    "qCardinal": 1333,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Invoice",
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "%Contact_Branch_ID",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ContactBranch"
+    ]
+  },
+  {
+    "qName": "%Contact_Group_ID",
+    "qCardinal": 16,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ContactGroup"
+    ]
+  },
+  {
+    "qName": "%Contact_ID",
+    "qCardinal": 3987,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Contact",
+      "ContactBranch",
+      "ContactGroup",
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Contact_Type_ID",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "%Country_ID",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "%Currency_ID",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Flag_InvoiceToDate_Passed",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Flag_IsArticle",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "%Flag_IsContact",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "%Flag_IsInvoice",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Flag_IsInvoiceTaxs",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "InvoiceTaxs"
+    ]
+  },
+  {
+    "qName": "%Flag_RemainingPayament",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Invoice_ID",
+    "qCardinal": 10437,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$key"
+    ],
+    "qSrcTables": [
+      "Invoice",
+      "InvoiceTaxs",
+      "Items"
+    ]
+  },
+  {
+    "qName": "%Project_ID",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%Salutation_ID",
+    "qCardinal": 5,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "%Title_ID",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "%User_ID",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "%_Compartive_Analysis_Index",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Compartive_Analysis_Measures"
+    ]
+  },
+  {
+    "qName": "%_Compartive_Analysis_Measure_DE",
+    "qCardinal": 11,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Compartive_Analysis_Measures"
+    ]
+  },
+  {
+    "qName": "%_Compartive_Analysis_Measure_EN",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Compartive_Analysis_Measures"
+    ]
+  },
+  {
+    "qName": "%_Compartive_Analysis_Measure_Expression",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Compartive_Analysis_Measures"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Dimension",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Dimensions_Order",
+    "qCardinal": 5,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Field_Label",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Flag",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Flag_Current",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_Flag_Label",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Date_RunningNumber",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Date_Dimension"
+    ]
+  },
+  {
+    "qName": "%_Dash_Dynmaic_Static",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Dynmaic_Static"
+    ]
+  },
+  {
+    "qName": "%_Dash_KPI",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_KPI"
+    ]
+  },
+  {
+    "qName": "%_Dash_Max_Date",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dash_Max_Date"
+    ]
+  },
+  {
+    "qName": "%_Dash_Periods",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dash_Periods"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Dimension",
+    "qCardinal": 13,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Dimension_Index",
+    "qCardinal": 13,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Dimension_Order",
+    "qCardinal": 13,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Measure",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Measure_Index",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Dynamic_Report_Measure_Order",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Dynamic_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Global_Active_Customer_Period_Index",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Active_Customer_Period"
+    ]
+  },
+  {
+    "qName": "%_Global_Active_Customer_Period_Value",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Active_Customer_Period"
+    ]
+  },
+  {
+    "qName": "%_Global_Company_Focus_Index",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Company_Focus"
+    ]
+  },
+  {
+    "qName": "%_Global_Company_Focus_Value",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Company_Focus"
+    ]
+  },
+  {
+    "qName": "%_Global_Language",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Language"
+    ]
+  },
+  {
+    "qName": "%_Global_Revenue_Type_Index",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Revenue_Type"
+    ]
+  },
+  {
+    "qName": "%_Global_Revenue_Type_Value",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Global_Revenue_Type"
+    ]
+  },
+  {
+    "qName": "%_Overview_Chart_Period_Index",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_Chart_Period"
+    ]
+  },
+  {
+    "qName": "%_Overview_Chart_Period_SetMod",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_Chart_Period"
+    ]
+  },
+  {
+    "qName": "%_Overview_Chart_Period_Value",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_Chart_Period"
+    ]
+  },
+  {
+    "qName": "%_Overview_KPI_Current_Month_Comparison_Index",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_KPI_Current_Month_Comparison"
+    ]
+  },
+  {
+    "qName": "%_Overview_KPI_Current_Month_Comparison_Value",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_KPI_Current_Month_Comparison"
+    ]
+  },
+  {
+    "qName": "%_Overview_KPI_Previous_Month_Comparison_Index",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_KPI_Previous_Month_Comparison"
+    ]
+  },
+  {
+    "qName": "%_Overview_KPI_Previous_Month_Comparison_Value",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_KPI_Previous_Month_Comparison"
+    ]
+  },
+  {
+    "qName": "%_Overview_Trend_Period_Index",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_Trend_Period"
+    ]
+  },
+  {
+    "qName": "%_Overview_Trend_Period_Value",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Overview_Trend_Period"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Dimension",
+    "qCardinal": 13,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Dimension_Index",
+    "qCardinal": 13,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Dimension_Order",
+    "qCardinal": 13,
+    "qTags": [],
+    "qSrcTables": [
+      "%_Scatter_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Dimension_Value",
+    "qCardinal": 13,
+    "qTags": [],
+    "qSrcTables": [
+      "%_Scatter_Report_Dimensions"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure2",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures2"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Index",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Index2",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures2"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Order",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Order2",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures2"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Var",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures"
+    ]
+  },
+  {
+    "qName": "%_Scatter_Report_Measure_Var2",
+    "qCardinal": 11,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "%_Scatter_Report_Measures2"
+    ]
+  },
+  {
+    "qName": "Article.QS_LoadTime",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.__extra_",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.article_group_id",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.article_type_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.contact_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.currency_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.deliverer_code",
+    "qCardinal": 3,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.deliverer_description",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.deliverer_name",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.delivery_price",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.height",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.html_text",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.intern_code",
+    "qCardinal": 49,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.intern_description",
+    "qCardinal": 33,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.intern_name",
+    "qCardinal": 52,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.is_stock",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.purchase_price",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.purchase_total",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.remarks",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.sale_price",
+    "qCardinal": 23,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.sale_total",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_available_nr",
+    "qCardinal": 22,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_disposed_nr",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_min_nr",
+    "qCardinal": 6,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_nr",
+    "qCardinal": 34,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_ordered_nr",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_picked_nr",
+    "qCardinal": 24,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_place_id",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.stock_reserved_nr",
+    "qCardinal": 32,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.tax_expense_id",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.tax_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.tax_income_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.unit_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.user_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.volume",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.weight",
+    "qCardinal": 11,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Article.width",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Article"
+    ]
+  },
+  {
+    "qName": "Contact.Branch",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ContactBranch"
+    ]
+  },
+  {
+    "qName": "Contact.Country",
+    "qCardinal": 12,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Country.iso_3166_alpha2",
+    "qCardinal": 12,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.DaysSinceFirstInoivce",
+    "qCardinal": 668,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.DaysSinceLastInoivce",
+    "qCardinal": 637,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.FirstInvoiceDate",
+    "qCardinal": 668,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Group",
+    "qCardinal": 17,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "ContactGroup"
+    ]
+  },
+  {
+    "qName": "Contact.LastInvoiceDate",
+    "qCardinal": 637,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Owner Name",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.QS_LoadTime",
+    "qCardinal": 6,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Salutation",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Title",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.Type",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.__extra_",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.address",
+    "qCardinal": 3673,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.birthday",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.city",
+    "qCardinal": 1577,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.contact_branch_ids",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.contact_group_ids",
+    "qCardinal": 16,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.fax",
+    "qCardinal": 2,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.is_lead",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.language_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.mail",
+    "qCardinal": 3318,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.mail_second",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.name_1",
+    "qCardinal": 3194,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.name_2",
+    "qCardinal": 1756,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.nr",
+    "qCardinal": 3977,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.owner_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.phone_fixed",
+    "qCardinal": 2993,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.phone_fixed_second",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.phone_mobile",
+    "qCardinal": 33,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.postcode",
+    "qCardinal": 1414,
+    "qTags": [],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.remarks",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.salutation_form",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.skype_name",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.updated_at",
+    "qCardinal": 3924,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.url",
+    "qCardinal": 3,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "Contact.user_id",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Contact"
+    ]
+  },
+  {
+    "qName": "DE",
+    "qCardinal": 44,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "LangSupport"
+    ]
+  },
+  {
+    "qName": "Date",
+    "qCardinal": 1333,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "DateNum",
+    "qCardinal": 1333,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "Day",
+    "qCardinal": 31,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "DayOfYear",
+    "qCardinal": 366,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "DaysBack",
+    "qCardinal": 1333,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "EN",
+    "qCardinal": 44,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "LangSupport"
+    ]
+  },
+  {
+    "qName": "Index",
+    "qCardinal": 44,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "LangSupport"
+    ]
+  },
+  {
+    "qName": "Invoice.Currency.Code",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.Currency.round_factor",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.Date_from",
+    "qCardinal": 815,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.Date_to",
+    "qCardinal": 1035,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.DaysOverDue",
+    "qCardinal": 46,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.Status_Group",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.api_reference",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.contact_address",
+    "qCardinal": 4106,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.contact_sub_id",
+    "qCardinal": 6,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.document_nr",
+    "qCardinal": 10437,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.esr_id",
+    "qCardinal": 10437,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.footer",
+    "qCardinal": 22,
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.header",
+    "qCardinal": 156,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.kb_item_status_id",
+    "qCardinal": 6,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.language_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.logopaper_id",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.mwst_is_net",
+    "qCardinal": 2,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.mwst_type",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.network_link",
+    "qCardinal": 313,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.payment_type_id",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.reference",
+    "qCardinal": 906,
+    "qTags": [],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.show_position_taxes",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.status",
+    "qCardinal": 6,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.template_slug",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.title",
+    "qCardinal": 4695,
+    "qTags": [],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total",
+    "qCardinal": 3845,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_credit_vouchers",
+    "qCardinal": 102,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_gross",
+    "qCardinal": 4730,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_net",
+    "qCardinal": 4533,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_received_payments",
+    "qCardinal": 3715,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_remaining_payments",
+    "qCardinal": 129,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_rounding_difference",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.total_taxes",
+    "qCardinal": 4793,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.updated_at",
+    "qCardinal": 9095,
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "Invoice.viewed_by_client_at",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  },
+  {
+    "qName": "InvoiceTaxs.percentage",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "InvoiceTaxs"
+    ]
+  },
+  {
+    "qName": "InvoiceTaxs.value",
+    "qCardinal": 4723,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "InvoiceTaxs"
+    ]
+  },
+  {
+    "qName": "Items.account_id",
+    "qCardinal": 96,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.amount",
+    "qCardinal": 4381,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.discount_in_percent",
+    "qCardinal": 14,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.id",
+    "qCardinal": 26730,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.internal_pos",
+    "qCardinal": 52,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.is_optional",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.parent_id",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.pos",
+    "qCardinal": 52,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.position_total",
+    "qCardinal": 6012,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.show_pos_nr",
+    "qCardinal": 1,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.show_pos_prices",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.tax_id",
+    "qCardinal": 5,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.tax_value",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.text",
+    "qCardinal": 9152,
+    "qTags": [],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.total_sum",
+    "qCardinal": 0,
+    "qTags": [],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.type",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.unit_id",
+    "qCardinal": 5,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.unit_name",
+    "qCardinal": 5,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.unit_price",
+    "qCardinal": 756,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Items.value",
+    "qCardinal": 190,
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Items"
+    ]
+  },
+  {
+    "qName": "Month",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "MonthNum",
+    "qCardinal": 12,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "MonthYear",
+    "qCardinal": 45,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "Quarter",
+    "qCardinal": 4,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "QuarterDay",
+    "qCardinal": 92,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "RunningYearMonthNum",
+    "qCardinal": 45,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "RunningYearQuarterNum",
+    "qCardinal": 16,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "RunningYearWeekNum",
+    "qCardinal": 194,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "Week",
+    "qCardinal": 53,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "WeekDay",
+    "qCardinal": 7,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "WeekYear",
+    "qCardinal": 192,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "Year",
+    "qCardinal": 4,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "YearMonth",
+    "qCardinal": 45,
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "YearMonthNum",
+    "qCardinal": 45,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "YearQuarter",
+    "qCardinal": 16,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "YearWeek",
+    "qCardinal": 194,
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_CurMTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_CurQTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_CurWTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_CurYTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_LastFullDay",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_MTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_QTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_WTD",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_Flag_YTD",
+    "qCardinal": 2,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Calendar"
+    ]
+  },
+  {
+    "qName": "_NumOfDays",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "_Default_selections_Temp2"
+    ]
+  },
+  {
+    "qName": "_NumOfMonths",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "_Default_selections_Temp2"
+    ]
+  },
+  {
+    "qName": "_NumOfQuarters",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "_Default_selections_Temp2"
+    ]
+  },
+  {
+    "qName": "_NumOfWeeks",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "_Default_selections_Temp2"
+    ]
+  },
+  {
+    "qName": "_NumOfYears",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "_Default_selections_Temp2"
+    ]
+  },
+  {
+    "qName": "invoice.fx_rate",
+    "qCardinal": 1,
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Invoice"
+    ]
+  }
+]

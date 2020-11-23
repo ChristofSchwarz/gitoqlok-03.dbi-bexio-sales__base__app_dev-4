@@ -1,0 +1,837 @@
+[
+  {
+    "qInfo": {
+      "qId": "183b69a1-6584-4fa7-9a19-0f020559dd44",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_AvgSales_OverPeriod",
+      "qDef": "$(vDash_Dyn_AvgSales_OverPeriod)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_AvgSales_OverPeriod_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_AvgSales_OverPeriod",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "1d38b0c0-936f-42ec-8aa0-ad363e8f120e",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Taxes",
+      "qDef": "$(vKPI_InvoiceTaxes)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1010}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Taxes",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "226dd608-c692-4101-a2dc-ff1145555336",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Avg Sales",
+      "qDef": "$(vKPI_AvgSales)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vKPI_AvgSales_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Avg Sales",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "22823127-66a9-425a-b8ab-2eb54674685a",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Gross",
+      "qDef": "$(vKPI_InvoiceGross)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1008}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Gross",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "271e18ac-c51d-4f5e-b586-37931657abb2",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Net",
+      "qDef": "$(vKPI_InvoiceNet)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1009}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Net",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "2f142a9a-41ca-4ed8-a2bc-b691aa787e42",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_InvoiceCount_OverPeriod",
+      "qDef": "$(vDash_Dyn_InvoiceCount_OverPeriod)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_InvoiceCount_OverPeriod_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_InvoiceCount_OverPeriod",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "39c63000-9331-41e8-bfa5-f2f442f0f9ac",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Remaining Payments",
+      "qDef": "$(vKPI_InvoiceRemainingPayments)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1005}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Remaining Payments",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "47c8260a-f623-40af-8a49-c42e58a3a13d",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Credit Vouchers",
+      "qDef": "$(vKPI_InvoiceCreditVoucchers)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1007}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Credit Vouchers",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "78a2a5d9-242d-4cc1-a94a-726c18485730",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_CustomerCount_OverPeriod",
+      "qDef": "$(vDash_Dyn_CustomerCount_OverPeriod)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_CustomerCount_OverPeriod_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_CustomerCount_OverPeriod",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "89b16485-b6ef-4148-85c1-6392cbcfcca4",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Invoice Recieved Payments",
+      "qDef": "$(vKPI_InvoiceReceivedPayments)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "only({<Index={1006}>}$(=vDefault_Lang))",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Invoice Recieved Payments",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "EnfyxEq",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_InvoiceCount_Comparison",
+      "qDef": "$(vDash_Dyn_InvoiceCount_Comparison)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_InvoiceCount_Comparison_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_InvoiceCount_Comparison",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "GaAEuCP",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_InvoiceCount",
+      "qDef": "$(vDash_Dyn_InvoiceCount)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_InvoiceCount)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_InvoiceCount",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "GsNPN",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Comparative_Diff",
+      "qDef": "$(vComparative_Diff)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "='$(vComparative_Diff_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Comparative_Diff",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "JSYHpA",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "# Invoices",
+      "qDef": "$(vKPI_InvoiceCount)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vKPI_InvoiceCount_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "# Invoices",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "LBnpbJH",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_Sales_Comparison",
+      "qDef": "$(vDash_Dyn_Sales_Comparison)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_Sales_Comparison_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_Sales_Comparison",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "LsPpESZ",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Comparative_%Change",
+      "qDef": "$(vComparative_%Change)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "='$(vComparative_%Change_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Comparative_%Change",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "LujnHd",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Year (Current)",
+      "qDef": "If(\r\ncount({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year))\"}>} $(=vGlobal_RevenueType_Field))\n,sum({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year))\"}>} $(=vGlobal_RevenueType_Field))\n)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "Only({<_Flag_LastFullDay={1}>}Year)",
+      "qNumFormat": {
+        "qType": "F",
+        "qnDec": 2,
+        "qUseThou": 0,
+        "qFmt": "#,##0",
+        "qDec": ".",
+        "qThou": ","
+      },
+      "isCustomFormatted": false,
+      "numFormatFromTemplate": true,
+      "coloring": {
+        "baseColor": {
+          "color": "#00917e",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "Year (Current)",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "PLGN",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_AvgSales",
+      "qDef": "$(vDash_Dyn_AvgSales)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_AvgSales_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_AvgSales",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "QdTDu",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_CustomerCount",
+      "qDef": "$(vDash_Dyn_CustomerCount)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_CustomerCount_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_CustomerCount",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "VeRjeeb",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Change From 2019-Oct",
+      "qDef": "sum({<[_Flag_CurMTD]={1}>}[Invoice.total])\r\n-\nsum({<[_Flag_MTD]={1},Year={2019},RunningYearMonthNum={$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)}>}[Invoice.total])",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {
+        "gradient": {
+          "colors": [
+            {
+              "color": "#a54343",
+              "index": 3
+            },
+            {
+              "color": "#578b60",
+              "index": 10
+            }
+          ],
+          "breakTypes": [
+            false
+          ],
+          "limits": [
+            0
+          ],
+          "limitType": "absolute"
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "Change From 2019-Oct",
+      "description": "",
+      "tags": [
+        "Alex"
+      ]
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "VpANL",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales",
+      "qDef": "$(vKPI_Sales)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vKPI_Sales_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Sales",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "cNUnH",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Comparative_Group2_Total",
+      "qDef": "$(vComparative_Group2_Total)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vComparative_Group2_Total_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Comparative_Group2_Total",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "cb0ab1b4-4044-4cff-af1d-70f024b1ae2d",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_Sales_OverPeriod",
+      "qDef": "$(vDash_Dyn_Sales_OverPeriod)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_Sales_OverPeriod)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_Sales_OverPeriod",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "d45a6cc5-f141-4dab-b9f0-b1055223a865",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "# Customers",
+      "qDef": "$(vKPI_ContactCount)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vKPI_ContactCount_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "# Customers",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "f6d3b0c0-4253-4b9b-ac60-f1a1ceb6d9f5",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_SalesItems",
+      "qDef": "$(vDash_Dyn_SalesItems)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_SalesItems_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_SalesItems",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "fchZEca",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_CustomerCount_Comparison",
+      "qDef": "$(vDash_Dyn_CustomerCount_Comparison)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_CustomerCount_Comparison_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_CustomerCount_Comparison",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "jJhWs",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Avg Revenue Per Month Last 12 Months (MTD, Excluding 2020-Oct)",
+      "qDef": "sum({<[_Flag_MTD]={1},[RunningYearMonthNum]={\">=$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum)-12)<$(=only({<[_Flag_CurMTD]={1}>}RunningYearMonthNum))\"}>}[Invoice.total])\r\n/\n12\n\n",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {
+        "gradient": {
+          "colors": [
+            {
+              "color": "#a54343",
+              "index": 3
+            },
+            {
+              "color": "#578b60",
+              "index": 10
+            }
+          ],
+          "breakTypes": [
+            false
+          ],
+          "limits": [
+            0
+          ],
+          "limitType": "absolute"
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "Avg Revenue Per Month Last 12 Months (MTD, Excluding 2020-Oct)",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "jLeB",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_AvgSales_Comparison",
+      "qDef": "$(vDash_Dyn_AvgSales_Comparison)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_AvgSales_Comparison_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_AvgSales_Comparison",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "rEApJZ",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Comparative_Group1_Total",
+      "qDef": "$(vComparative_Group1_Total)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vComparative_Group1_Total_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "Comparative_Group1_Total",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "sNUCUyr",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Prev Year",
+      "qDef": "sum({<Year={\"$(=Only({<_Flag_LastFullDay={1}>}Year)-1)\"}>}Invoice.total)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "=Only({<_Flag_LastFullDay={1}>}Year)-1",
+      "qNumFormat": {
+        "qType": "F",
+        "qnDec": 2,
+        "qUseThou": 0,
+        "qFmt": "#,##0",
+        "qDec": ".",
+        "qThou": ","
+      },
+      "isCustomFormatted": false,
+      "numFormatFromTemplate": true,
+      "coloring": {
+        "baseColor": {
+          "color": "#acdbbb",
+          "index": -1
+        }
+      }
+    },
+    "qMetaDef": {
+      "title": "Prev Year",
+      "description": "",
+      "tags": []
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "tmw",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "%_Dash_Dyn_Sales",
+      "qDef": "$(vDash_Dyn_Sales)",
+      "qGrouping": "N",
+      "qExpressions": [],
+      "qActiveExpression": 0,
+      "qLabelExpression": "'$(vDash_Dyn_Sales_Label)'",
+      "qNumFormat": {
+        "qType": "U",
+        "qnDec": 10,
+        "qUseThou": 0
+      },
+      "coloring": {}
+    },
+    "qMetaDef": {
+      "title": "%_Dash_Dyn_Sales",
+      "description": "",
+      "tags": []
+    }
+  }
+]

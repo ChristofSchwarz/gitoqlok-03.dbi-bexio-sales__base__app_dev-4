@@ -1,0 +1,27 @@
+[
+  {
+    "qProperty": {
+      "qInfo": {
+        "qId": "38bb4f02-2989-4af0-8d77-984cfed53e98",
+        "qType": "appprops"
+      },
+      "qMetaDef": {},
+      "sheetTitleBgColor": {
+        "color": "#000000",
+        "index": 16
+      },
+      "sheetTitleGradientColor": {
+        "color": "#ffffff",
+        "index": 15
+      },
+      "sheetTitleColor": "#ecc43d",
+      "sheetLogoThumbnail": {
+        "qStaticContentUrlDef": {}
+      },
+      "sheetLogoPosition": "right",
+      "rtl": false,
+      "theme": "ax-theme-bexio"
+    },
+    "qChildren": []
+  }
+]
