@@ -256,43 +256,57 @@
       0,
       1
     ],
-    "columnWidths": []
+    "columnWidths": [],
+    "qLayoutExclude": {
+      "qHyperCubeDef": {
+        "qStateName": "",
+        "qDimensions": [],
+        "qMeasures": [],
+        "qInterColumnSortOrder": [],
+        "qSuppressZero": false,
+        "qSuppressMissing": false,
+        "qInitialDataFetch": [],
+        "qReductionMode": "N",
+        "qMode": "S",
+        "qPseudoDimPos": -1,
+        "qNoOfLeftDims": -1,
+        "qAlwaysFullyExpanded": false,
+        "qMaxStackedCells": 5000,
+        "qPopulateMissing": false,
+        "qShowTotalsAbove": false,
+        "qIndentMode": false,
+        "qCalcCond": {
+          "qv": ""
+        },
+        "qSortbyYValue": 0,
+        "qTitle": {
+          "qv": ""
+        },
+        "qCalcCondition": {
+          "qCond": {
+            "qv": ""
+          },
+          "qMsg": {
+            "qv": ""
+          }
+        },
+        "qColumnOrder": [],
+        "qExpansionState": []
+      }
+    }
   },
   "showTitles": true,
   "title": "Top 10 Contributing Products",
-  "subtitle": "Current Year Revenue",
-  "footnote": "",
-  "disableNavMenu": false,
-  "showDetails": false,
-  "components": [
-    {
-      "key": "slices",
-      "style": {
-        "strokeWidth": "small",
-        "strokeColor": {
-          "index": 15,
-          "color": "#ffffff"
-        },
-        "cornerRadius": 5.35,
-        "innerRadius": 0.51
-      }
+  "subtitle": {
+    "qStringExpression": {
+      "qExpr": "$(=$(=%_Overview_Chart_Period_LabelVar))"
     }
-  ],
-  "donut": {
-    "showAsDonut": true
   },
-  "dimensionTitle": true,
-  "dataPoint": {
-    "auto": true,
-    "labelMode": "share",
-    "labelValueMode": "arc"
-  },
+  "footnote": "",
+  "showDetails": false,
   "color": {
     "auto": false,
     "mode": "byDimension",
-    "formatting": {
-      "numFormatFromTemplate": true
-    },
     "useBaseColors": "off",
     "paletteColor": {
       "index": 12
@@ -318,6 +332,9 @@
       "label": "Zzysfm",
       "key": "Zzysfm",
       "type": "libraryItem"
+    },
+    "formatting": {
+      "numFormatFromTemplate": true
     }
   },
   "legend": {
@@ -367,10 +384,41 @@
     }
   },
   "visualization": "piechart",
+  "disableNavMenu": false,
+  "components": [
+    {
+      "key": "slices",
+      "style": {
+        "strokeWidth": "small",
+        "strokeColor": {
+          "index": 15,
+          "color": "#ffffff"
+        },
+        "cornerRadius": 0,
+        "innerRadius": 0.49
+      }
+    }
+  ],
+  "donut": {
+    "showAsDonut": true
+  },
+  "dimensionTitle": true,
+  "dataPoint": {
+    "auto": true,
+    "labelMode": "share",
+    "labelValueMode": "arc"
+  },
   "version": "1.3.0",
   "qLayoutExclude": {
     "disabled": {
       "qExtendsId": "",
+      "labels": {
+        "auto": true,
+        "headers": true,
+        "overlay": true,
+        "leaves": true,
+        "values": false
+      },
       "search": {
         "sorting": "auto"
       },
@@ -387,13 +435,6 @@
       "multiline": {
         "wrapTextInHeaders": true,
         "wrapTextInCells": true
-      },
-      "labels": {
-        "auto": true,
-        "headers": true,
-        "overlay": true,
-        "leaves": true,
-        "values": false
       }
     },
     "quarantine": {
